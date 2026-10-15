@@ -9,11 +9,17 @@ body {
 }
 
 .fancy-title {
-    color: #9333EA;
+    color: #E5E7EB;
     font-size: 48px;
     text-align: left;
     line-height: 1.2;
     letter-spacing: -0px;
+}
+
+.hero-label {
+    color: #A78BFA;
+    font-size: 14px;
+    letter-spacing: 2px;
 }
 
 .hero {
@@ -22,4 +28,57 @@ body {
 
 html {
     scroll-behavior: smooth;
+}
+
+.hero-description {
+    color: #A1A1AA;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 550px;
+}
+
+.hero-button {
+    display: inline-block;
+    background-color: #7C3AED;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.hero-button:hover {
+    background-color: #9333EA;
+    transform: translateY(-3px);
+}
+
+.project-card {
+    background-color: #1C1C2B;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #36364A;
+    transition: transform 0.3s ease;
+    max-width: 350px;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    color: #F9FAFB;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    color: #A1A1AA;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.projects-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
