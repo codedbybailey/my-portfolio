@@ -172,3 +172,86 @@ html{scroll-behavior:auto}
 .statement .statement-orb { display: none; }
 .statement::after { height: 16%; background: linear-gradient(to bottom,transparent,#f7f4ec); }
 .statement-inner { position:relative; z-index: 2; }
+
+
+/* MOBILE-FIRST POLISH — overrides only on phone-size screens; desktop unchanged. */
+@media (max-width: 700px) {
+  html,body {max-width:100%;overflow-x:clip}
+  .nav {height:68px;gap:10px;padding:0 5%;}
+  .nav-center {display:none}
+  .nav nav {gap:clamp(10px,3vw,18px);font-size:10px;letter-spacing:.02em}
+  .nav nav a:nth-child(3){display:none}
+  .wordmark{flex-shrink:0;font-size:29px}
+  /* A real mobile hero composition: headline first, flower below/right, intro at foot. */
+  .hero{height:auto;min-height:740px;max-height:none;padding:28px 6% 42px;display:flex;flex-direction:column;overflow:hidden}
+  .hero-top{position:relative;z-index:5;font-size:10px}
+  .hero-title{position:relative;top:auto;left:auto;width:100%;margin-top:clamp(80px,15vh,140px);line-height:.98;z-index:5}
+  .title-line{gap:clamp(5px,1.5vw,12px)}
+  .title-line>span:first-child{font-size:clamp(42px,11.9vw,72px);letter-spacing:-.085em}
+  .title-line .asterisk{font-size:clamp(25px,6vw,38px);transform:translateY(-8px)}
+  .title-second{margin-left:0}
+  .title-second em{font-size:clamp(42px,11.5vw,67px);margin-right:3px}
+  .title-second>span{font-size:clamp(40px,10.7vw,65px)}
+  .title-third{margin:5px 0 0}
+  .title-third>span:first-child{font-size:clamp(66px,17vw,105px)}
+  .title-period{font-size:clamp(55px,15vw,80px)}
+  .hero-flower{width:min(69vw,335px);top:340px;right:-5%;opacity:.98;z-index:2;transform:rotate(13deg);pointer-events:none}
+  .hero-bottom{position:relative;left:auto;right:auto;bottom:auto;z-index:6;margin-top:auto;padding-top:255px;align-items:end;gap:12px}
+  .hero-bottom p{font-size:clamp(12px,3.2vw,15px);line-height:1.6;max-width:225px;margin:0}
+  .round-link{width:50px;height:50px;flex-shrink:0}
+  .ticker{padding-block:17px}
+  .ticker-track{font-size:15px}
+  .section-pad{padding:82px 6% 90px}
+  .section-bar{gap:12px;align-items:start;line-height:1.55;font-size:9px}
+  .section-bar span:last-child{text-align:right}
+  .work-heading,.skills-top{margin:45px 0 42px}
+  .work-heading h2,.about h2,.skills h2{font-size:clamp(49px,11vw,73px)}
+  .work-heading p,.skills-top p{max-width:310px;font-size:14px;line-height:1.6}
+  .projects{gap:56px}
+  .project-art{height:clamp(310px,86vw,440px)}
+  .finance-ui{padding:18px;width:75%;height:69%}
+  .finance-amount{font-size:clamp(40px,11vw,65px)}
+  .recipe-card{width:70%;padding:18px}
+  .recipe-card strong{font-size:clamp(34px,9vw,50px)}
+  .project-info h3{font-size:clamp(35px,9vw,48px)}
+  .statement{padding:90px 6% 125px;min-height:540px}
+  .statement-inner p{font-size:clamp(36px,8vw,56px);line-height:1.16}
+  .about-layout{gap:42px;margin-top:48px}
+  .about-left>p{font-size:14px;line-height:1.75}
+  .portrait{width:min(80%,350px);margin:0 auto;transform:rotate(1deg)}
+  .portrait-frame{box-shadow:12px 14px 0 #e4c3be;padding:10px}
+  .portrait-sticker{width:75px;height:75px;left:-24px;font-size:13px}
+  .about{padding-bottom:95px}
+  .skills{padding-bottom:100px}
+  .skill-row{grid-template-columns:26px minmax(0,1fr);gap:12px}
+  .skill-row strong{font-size:clamp(25px,6.8vw,40px)}
+  /* Contact artwork stays decorative, never covers the words or button. */
+  .contact{min-height:620px;padding:26px 6% 0;isolation:isolate}
+  .contact-top{position:relative;z-index:3;gap:15px}
+  .contact-top span:last-child{text-align:right}
+  .contact-sun{font-size:clamp(290px,83vw,430px);top:21%;right:-24%;opacity:.17;z-index:0;pointer-events:none}
+  .contact-body{position:relative;z-index:3;margin:auto 0;padding:85px 0 70px}
+  .contact-body>p{font-size:10px;line-height:1.7;max-width:290px}
+  .contact h2{font-size:clamp(59px,13.5vw,88px);line-height:.96;letter-spacing:-.07em;margin:28px 0 38px}
+  .contact-button{gap:22px;max-width:100%;padding:17px 20px;font-size:11px}
+  .contact footer{position:relative;z-index:3;padding-bottom:24px}
+}
+@media (max-width: 375px){
+ .hero{min-height:710px}
+ .hero-title{margin-top:95px}
+ .hero-flower{top:320px;width:72vw}
+ .hero-bottom{padding-top:245px}
+ .nav nav{font-size:9px;gap:9px}
+ .contact h2{font-size:clamp(52px,13.2vw,64px)}
+}
+
+/* Vector botanical asterisk: avoids iOS emoji substitution. */
+.botanical-star{display:inline-block;width:1em;height:1em;vertical-align:-.09em;fill:currentColor;flex:none;overflow:visible}
+.wordmark .botanical-star{width:.56em;height:.56em;color:#7d9e7c;vertical-align:.17em;margin-left:4px}
+.title-line .asterisk{display:inline-flex;align-items:center;justify-content:center;color:#f28d55}
+.title-line .asterisk .botanical-star{width:1em;height:1em}
+.ticker-track .botanical-star{width:.82em;height:.82em;color:#fff8d9;margin:0 20px;vertical-align:-.08em}
+.portrait-sticker .botanical-star{width:1em;height:1em;color:#fffaf7;margin-top:5px}
+.contact-sun{display:flex;align-items:center;justify-content:center;width:min(65vw,820px);height:min(65vw,820px);font-size:inherit;color:#6aaf8b;opacity:.35}
+.contact-sun .botanical-star{width:100%;height:100%}
+@media(max-width:700px){.contact-sun{width:clamp(290px,83vw,430px);height:clamp(290px,83vw,430px);opacity:.17;top:21%;right:-24%}.wordmark .botanical-star{margin-left:3px}}
