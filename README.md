@@ -1,7 +1,7 @@
 
 <div align="center">
 
-# ✳ Bailey — Creative Coder
+# ✳ Bailey
 
 **A little corner of the internet where my creativity meets code.**
 
