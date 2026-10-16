@@ -255,3 +255,67 @@ html{scroll-behavior:auto}
 .contact-sun{display:flex;align-items:center;justify-content:center;width:min(65vw,820px);height:min(65vw,820px);font-size:inherit;color:#6aaf8b;opacity:.35}
 .contact-sun .botanical-star{width:100%;height:100%}
 @media(max-width:700px){.contact-sun{width:clamp(290px,83vw,430px);height:clamp(290px,83vw,430px);opacity:.17;top:21%;right:-24%}.wordmark .botanical-star{margin-left:3px}}
+
+/* Mobile polish: show the COMPLETE hero flower and keep type comfortably readable.
+   These overrides intentionally follow earlier mobile rules. */
+@media (max-width:700px) {
+  .hero {
+    min-height: 780px;
+    height: auto;
+    overflow: hidden;
+    padding-bottom: 38px;
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-title {
+    flex: 0 0 auto;
+    margin-top: clamp(75px, 12svh, 115px);
+    line-height: 1;
+  }
+  .title-line { gap: 7px; }
+  .title-line>span:first-child {font-size:clamp(47px,12.5vw,76px)}
+  .title-second em {font-size:clamp(45px,12vw,73px)}
+  .title-second>span {font-size:clamp(43px,11.4vw,69px)}
+  .title-third>span:first-child {font-size:clamp(69px,17.7vw,109px)}
+  .hero-flower {
+    position:relative;
+    inset:auto;
+    width:min(83vw,390px);
+    max-width:100%;
+    margin:8px auto -22px;
+    flex:0 0 auto;
+    opacity:1;
+    transform:rotate(7deg);
+    z-index:2;
+    overflow:visible;
+  }
+  .hero-flower svg {display:block;width:100%;height:auto;overflow:visible}
+  .hero-bottom {
+    margin-top:auto;
+    padding-top:12px;
+    min-height:110px;
+    gap:15px;
+    align-items:center;
+  }
+  .hero-bottom p {font-size:clamp(15px,3.9vw,17px);max-width:265px;line-height:1.55}
+  .hero-bottom .round-link {flex-shrink:0}
+  .hero-top,.section-bar,.contact-top,.meta,.tags,.project-num,.project-art-label,.art-corner,.about-facts,.contact-body>p,footer {
+    font-size:clamp(11px,2.9vw,13px);
+    line-height:1.55;
+  }
+  .nav nav a {font-size:12px}
+  .work-heading p,.skills-top p {font-size:16px;line-height:1.65}
+  .project>p,.about-left>p {font-size:16px;line-height:1.75}
+  .project-info h3 {font-size:clamp(37px,10vw,52px)}
+  .statement-inner>span {font-size:12px;letter-spacing:.08em}
+  .skill-row strong {font-size:clamp(31px,8vw,44px)}
+  .skill-row>span {font-size:12px}
+  .contact-body>p {font-size:13px;max-width:330px}
+  .contact-button {font-size:13px}
+  footer {font-size:11px}
+}
+@media(max-width:375px){
+  .hero-title{margin-top:76px}
+  .hero-flower{width:83vw;margin-top:2px}
+  .hero-bottom{padding-top:8px}
+}
