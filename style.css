@@ -319,3 +319,7 @@ html{scroll-behavior:auto}
   .hero-flower{width:83vw;margin-top:2px}
   .hero-bottom{padding-top:8px}
 }
+
+/* Cross-device vector arrow; never rendered as a platform emoji. */
+.round-link .explore-arrow {display:block;width:27px;height:27px;flex:none;}
+@media(max-width:700px){.round-link .explore-arrow{width:24px;height:24px}}
