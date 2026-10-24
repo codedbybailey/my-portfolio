@@ -1499,3 +1499,27 @@ footer {
 @media (max-width: 430px) {
   .page-bottom-flower { width: min(56vw, 220px) !important; }
 }
+
+
+/* V29: authoritative placement rules for restored pixel-art site. */
+@media (min-width: 901px) {
+  .about-section { min-height: 570px; padding-top: 18px; }
+  .about-copy.pixel-bubble { position: relative; z-index: 3; }
+  .about-art { position: absolute; top: -35px; right: -105px; width: min(67vw, 700px); z-index: 1; }
+}
+@media (min-width: 701px) and (max-width: 900px) {
+  .about-section { min-height: 570px; }
+  .about-copy.pixel-bubble { z-index: 3; }
+  .about-art { position: absolute; top: -20px; right: -95px; width: min(73vw, 590px); z-index: 1; }
+}
+/* Mobile flower stays behind dialogue boxes. */
+@media (max-width: 700px) {
+  .about-section { isolation: isolate; }
+  .about-art { z-index: 1; }
+  .about-copy.pixel-bubble { z-index: 3; }
+}
+/* Anchor the decorative pink flower to the page itself, not to viewport scroll. */
+body { position: relative; }
+.page-bottom-flower { position: absolute !important; left: auto !important; right: 0 !important; bottom: 0 !important; z-index: 0; transform-origin: 100% 100%; }
+.contact { position: relative; z-index: 1; }
+footer { position: relative; z-index: 2; padding-bottom: 0 !important; }

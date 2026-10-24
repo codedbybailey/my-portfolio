@@ -117,3 +117,10 @@ The previous pointed year badges were replaced with a true circular mask sampled
 - Restored the footer to the true bottom with no extra bottom padding pushing content upward.
 - Kept the pink flower pinned to the absolute bottom-right of the page.
 - Replaced the free-floating bottom animation with a subtle magnetic-style motion: slight scale-up and nudge as the user scrolls into the contact/footer area.
+
+
+## V29 deployment repair
+
+Deploy index.html AND portfolio-v29.css AND portfolio-v29.js together at the repository root.
+Previous GitHub Pages version appeared to load a stale style.css. New filenames force the live site to request matching styles and animation logic.
+Restore pixel text boxes, overlap positioning, and bottom-right flower.
