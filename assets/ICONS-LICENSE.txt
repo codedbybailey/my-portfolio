@@ -1,0 +1,5 @@
+Contact icons: Material Design Icons (mdi:github, mdi:linkedin) by Pictogrammers.
+Iconify catalog used by Better Icons.
+License: Apache-2.0
+https://github.com/Templarian/MaterialDesign
+https://www.apache.org/licenses/LICENSE-2.0
