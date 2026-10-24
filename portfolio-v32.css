@@ -1459,7 +1459,7 @@ footer {
   right: 0 !important;
   bottom: 0 !important;
   z-index: 0;
-  width: min(34vw, 370px) !important;
+  width: min(31vw, 330px) !important;
   pointer-events: none;
   will-change: transform;
 }
@@ -1485,19 +1485,19 @@ footer {
 }
 
 @media (max-width: 1100px) {
-  .page-bottom-flower { width: min(35vw, 335px) !important; }
+  .page-bottom-flower { width: min(32vw, 305px) !important; }
 }
 
 @media (max-width: 900px) {
-  .page-bottom-flower { width: min(38vw, 290px) !important; }
+  .page-bottom-flower { width: min(35vw, 265px) !important; }
 }
 
 @media (max-width: 700px) {
-  .page-bottom-flower { width: min(50vw, 245px) !important; }
+  .page-bottom-flower { width: min(46vw, 225px) !important; }
 }
 
 @media (max-width: 430px) {
-  .page-bottom-flower { width: min(56vw, 220px) !important; }
+  .page-bottom-flower { width: min(52vw, 200px) !important; }
 }
 
 
@@ -1523,3 +1523,47 @@ body { position: relative; }
 .page-bottom-flower { position: absolute !important; left: auto !important; right: 0 !important; bottom: 0 !important; z-index: 0; transform-origin: 100% 100%; }
 .contact { position: relative; z-index: 1; }
 footer { position: relative; z-index: 2; padding-bottom: 0 !important; }
+
+
+/* V31: Contact and footer use a clean pixel-outline treatment like the navigation.
+   The strong black stroke is applied to glyphs only, not a dark box behind text. */
+.contact h2,
+.contact > p,
+.contact-links a,
+footer {
+  text-shadow:
+    -3px  0    0 #050505,
+     3px  0    0 #050505,
+     0   -3px  0 #050505,
+     0    3px  0 #050505,
+    -3px -3px  0 #050505,
+     3px -3px  0 #050505,
+    -3px  3px  0 #050505,
+     3px  3px  0 #050505,
+     3px  4px  0 #21152f !important;
+}
+/* SVG social icons need a filter; text-shadow does not outline their paths. */
+.contact .contact-icon {
+  filter: drop-shadow(1px 1px 0 #050505) drop-shadow(-1px -1px 0 #050505)
+          drop-shadow(2px 2px 0 #21152f);
+}
+
+/* V32: clear space for readable Contact text, while preserving the bottom blossom. */
+.contact { position: relative; z-index: 1; padding-right: 0 !important; }
+.contact > h2, .contact > p, .contact .contact-links { position: relative; z-index: 3; }
+.contact > p { max-width: min(60%, 660px); line-height: 1.15; }
+.contact .contact-links { max-width: 62%; }
+.page-bottom-flower { z-index: 0 !important; right: 0 !important; bottom: 0 !important; width: min(29vw, 305px) !important; }
+footer { z-index: 3 !important; padding-right: min(30vw, 320px); }
+@media (max-width: 900px) {
+  .contact > p { max-width: 62%; }
+  .contact .contact-links { max-width: 64%; }
+  .page-bottom-flower { width: min(33vw, 245px) !important; }
+  footer { padding-right: min(33vw, 260px); }
+}
+@media (max-width: 700px) {
+  .contact > p, .contact .contact-links { max-width: 100%; }
+  .contact { padding-bottom: clamp(120px, 37vw, 175px) !important; }
+  .page-bottom-flower { width: min(43vw, 190px) !important; }
+  footer { padding-right: min(44vw, 185px); }
+}

@@ -124,3 +124,12 @@ The previous pointed year badges were replaced with a true circular mask sampled
 Deploy index.html AND portfolio-v29.css AND portfolio-v29.js together at the repository root.
 Previous GitHub Pages version appeared to load a stale style.css. New filenames force the live site to request matching styles and animation logic.
 Restore pixel text boxes, overlap positioning, and bottom-right flower.
+
+
+## V30 bottom flower scale
+
+- Reduced the bottom-right pink flower slightly across desktop, tablet, and mobile breakpoints.
+- Left the overlap, footer position, and magnetic animation unchanged.
+
+
+V31: Improved Contact/footer pixel text outline to remain legible when pink flower overlaps. No layout changes.
