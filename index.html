@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#050505">
   <meta name="description" content="Bailey's portfolio: computer science student, aspiring developer, creative projects, skills, and experience.">
-  <title>Bailey | About & Portfolio</title>
+  <title>Bailey | About &amp; Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/lenis.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -20,19 +23,17 @@
     </nav>
   </header>
 
-  <div class="flower-band" aria-hidden="true">
-    <div class="flower-wrap">
-      <img src="assets/pixel-flower.png" alt="" width="1254" height="1254">
-    </div>
-  </div>
-
   <main>
     <section id="about" class="about-section content-width" aria-labelledby="about-title">
-      <div class="about-copy about-copy-wide">
+      <div class="about-copy about-copy-wide pixel-bubble">
         <h1 id="about-title">About Me</h1>
-        <p>I'm Bailey, a computer science student at the University of Texas at El Paso with a growing interest in software development, cybersecurity, and creative web design.</p>
-        <p>I learn by building. I'm currently working with Java, HTML, CSS, and JavaScript, experimenting with interactive websites and practical tools that solve everyday problems.</p>
-        <p>Outside of coding, I enjoy spending time with my truck, playing Zelda, and exploring new ideas. I'm excited to keep learning and contribute to a team where I can grow.</p>
+        <p>I'm Bailey, a computer science student at the University of Texas at El Paso with a growing interest in software development, cybersecurity, and creative web design.<span class="speech-tail" aria-hidden="true"></span></p>
+        <p>I learn by building. I'm currently working with Java, HTML, CSS, and JavaScript, experimenting with interactive websites and practical tools that solve everyday problems.<span class="speech-tail" aria-hidden="true"></span></p>
+        <p>Outside of coding, I enjoy spending time with my truck, playing Zelda, and exploring new ideas. I'm excited to keep learning and contribute to a team where I can grow.<span class="speech-tail" aria-hidden="true"></span></p>
+      </div>
+
+      <div class="about-art" aria-hidden="true">
+        <img src="assets/pixel-flower.png" alt="" width="1254" height="1254">
       </div>
     </section>
 
@@ -110,7 +111,12 @@
   </main>
 
   <footer class="content-width">© <span id="year">2026</span> Bailey. Built with HTML, CSS &amp; JavaScript.</footer>
+  <div class="page-bottom-flower" aria-hidden="true">
+    <img src="assets/pixel-contact-flower.png" alt="" width="821" height="972">
+  </div>
   <script src="assets/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
