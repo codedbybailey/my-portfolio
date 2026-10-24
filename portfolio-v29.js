@@ -57,35 +57,38 @@
 })();
 
 
-// Flower follows the scroll gently, inspired by React Bits' layered motion.
-// GSAP ScrollTrigger provides scroll-linked movement without converting to React.
+// Top flower now uses the same softer magnetic-style motion as the bottom flower.
+// It stays visually anchored and gently scales/nudges as the user scrolls through the About area.
 (() => {
   const flower = document.querySelector('.about-art');
   const section = document.querySelector('.about-section');
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (!flower || !section || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
   gsap.registerPlugin(ScrollTrigger);
   const mm = gsap.matchMedia();
-  // Desktop only: mobile uses static art to avoid obstructing text.
+  // Desktop only: mobile keeps the art static to avoid covering text.
   mm.add('(min-width: 751px) and (prefers-reduced-motion: no-preference)', () => {
-    const tween = gsap.fromTo(flower,
-      { y: -12, rotation: -1.5 },
+    gsap.set(flower, { transformOrigin: '100% 25%' });
+    const tween = gsap.fromTo(
+      flower,
+      { x: 10, y: 14, scale: 0.95, rotation: -1.0, opacity: 0.97 },
       {
-        y: 112,
-        rotation: 2.5,
+        x: 0,
+        y: 0,
+        scale: 1.035,
+        rotation: 0.45,
+        opacity: 1,
         ease: 'none',
         scrollTrigger: {
           trigger: section,
-          start: 'top top',
+          start: 'top bottom',
           end: 'bottom top',
-          scrub: 1.35,
+          scrub: 1.55,
           invalidateOnRefresh: true
         }
       }
     );
     return () => { tween.scrollTrigger?.kill(); tween.kill(); };
   });
-  // Lenis updates native scroll, which ScrollTrigger can observe automatically.
   window.addEventListener('load', () => ScrollTrigger.refresh(), { once: true });
 })();
 

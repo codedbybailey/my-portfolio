@@ -136,3 +136,53 @@ V31: Improved Contact/footer pixel text outline to remain legible when pink flow
 
 ## V33 wide desktop layout
 For viewports 1400px and wider, the page uses an expanded content area and a balanced About/flower composition. Smaller laptop, iPad, and iPhone layouts are unchanged.
+
+
+## V34 responsive wide-screen fix
+The top flower, header and section headings scale fluidly above 900px instead of jumping at 1400px. The footer aligns to the same container; bottom flower positioning and animation are untouched.
+
+
+## V35 top flower animation
+
+- Changed the top purple flower animation to match the softer magnetic-style behavior of the bottom flower.
+- Removed the older drifting/parallax movement.
+- Kept the rest of the V34/V33 responsive layout behavior unchanged.
+
+
+## V36: Restored top flower overlap
+
+The top purple flower overlaps behind the About bubble on laptop, iPad and wide desktop. Its soft magnetic scroll effect remains unchanged; iPhone layout and bottom flower remain unchanged.
+
+
+## V37 top flower overlap
+
+- Kept the top purple flower anchored to the right edge.
+- Increased its size on tablet and desktop breakpoints so it overlaps the About bubble more like the intended layered composition.
+- Preserved the softer magnetic animation from V35.
+
+
+## V38 overlap containment
+The large top flower stays right-aligned and overlapping with the About speech bubble, but is clipped at the bottom boundary of the About section so it does not cover the Skills cards or Experience. No changes to the bottom flower or mobile positioning.
+
+
+## V39 top flower continuation
+
+- Let the top purple flower continue below the About section so it remains visible beneath the Skills area.
+- Kept the Skills, Experience, Projects, Contact, and footer content layered above the artwork.
+- Preserved the right-edge anchoring, overlap with About, and softer magnetic animation.
+
+
+## V40 extended flower visibility
+
+- Increased the downward visible region for the top flower so the bottom of the artwork is not clipped.
+- Kept the flower behind the Skills/Experience/Projects/Contact content.
+- Preserved right-edge anchoring, About overlap, and the softer animation.
+
+V41: enlarged only the bottom pink flower on desktop to overlap behind the right project card, keeping the bottom-right anchoring, project readability, and gentle animation.
+
+
+## V42 foreground flower
+The pink bottom-right flower now draws over the Recipe Cart project card, instead of behind it. Position, size and motion remain unchanged.
+
+## V43
+Reduced only the bottom pink flower size while keeping it above the Recipe Cart card and anchored at the bottom right. Magnetic animation unchanged.

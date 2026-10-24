@@ -1568,24 +1568,238 @@ footer { z-index: 3 !important; padding-right: min(30vw, 320px); }
   footer { padding-right: min(44vw, 185px); }
 }
 
-/* V33: wide-screen layout. Existing laptop, tablet and phone layouts remain intact. */
-@media (min-width: 1400px) {
-  .content-width { width: min(calc(100% - 112px), 1290px); }
-  .site-header { max-width: 1410px; padding-left: 56px; padding-right: 56px; }
-  .about-section { min-height: 640px; padding-top: 30px; }
-  .about-copy.pixel-bubble {
-    width: min(42%, 530px);
-    max-width: 530px;
-    margin-top: 24px;
-    padding: 34px 36px 38px;
+/* V34: fluid wide-desktop composition, not a fixed-width jump at 1400px. */
+@media (min-width: 901px) {
+  .content-width {
+    width: min(calc(100% - clamp(56px, 7vw, 160px)), 1460px);
   }
-  .about-copy.pixel-bubble h1 { font-size: 31px; }
-  .about-copy.pixel-bubble p { font-size: 28px; line-height: 1.04; }
-  .about-art { top: -32px; right: -30px; width: min(55%, 725px); }
-  .skills-section { margin-top: 34px; }
-  .skills-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
-  .skill-card { min-width: 0; }
-  .project-list { gap: 26px; }
-  .experience-section { margin-top: 88px; }
-  .contact > p { max-width: 700px; }
+  .site-header {
+    width: min(calc(100% - clamp(56px, 7vw, 160px)), 1460px);
+    max-width: none;
+    padding: 18px 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(24px, 4vw, 80px);
+  }
+  .site-header .logo { font-size: clamp(21px, 1.5vw, 29px); }
+  .site-header nav {
+    gap: clamp(14px, 1.5vw, 28px);
+    font-size: clamp(11px, .84vw, 14px);
+    flex-shrink: 0;
+  }
+  .about-section {
+    min-height: clamp(560px, 44vw, 790px);
+    padding-top: clamp(16px, 2vw, 44px);
+    padding-bottom: 32px;
+  }
+  .about-copy.pixel-bubble {
+    max-width: none;
+    width: clamp(410px, 39%, 590px);
+    margin-top: clamp(18px, 2vw, 34px);
+    padding: clamp(27px, 2.5vw, 39px);
+  }
+  .about-copy.pixel-bubble h1 { font-size: clamp(25px, 2vw, 34px); }
+  .about-copy.pixel-bubble p {
+    font-size: clamp(25px, 1.75vw, 30px);
+    line-height: 1.04;
+  }
+  .about-art {
+    position: absolute;
+    top: clamp(-54px, -2.8vw, -18px);
+    right: clamp(-110px, -4vw, -22px);
+    width: clamp(530px, 54%, 810px);
+    max-width: none;
+    z-index: 1;
+  }
+  .skills-section { margin-top: clamp(16px, 2vw, 45px); }
+  .skills-grid { gap: clamp(18px, 2vw, 30px); }
+  .skills-section h2, .experience-section h2, .extra-section h2 {
+    font-size: clamp(21px, 1.6vw, 27px);
+  }
+  .project-list { gap: clamp(18px, 2vw, 30px); }
+  .experience-section { margin-top: clamp(70px, 6vw, 105px); }
+  .contact > p { max-width: min(60%, 740px); }
+  .contact .contact-links { max-width: 62%; }
+  footer {
+    width: min(calc(100% - clamp(56px, 7vw, 160px)), 1460px);
+    padding-right: min(30vw, 340px);
+    padding-top: clamp(50px, 5vw, 85px);
+  }
+}
+
+/* Extra-wide displays: keep art alongside the About box, with no dead gutter. */
+@media (min-width: 1800px) {
+  .about-art { right: -45px; width: min(54%, 820px); }
+}
+
+/* V36: restore intentional layering of the top flower with the speech box.
+   Keep the flower behind the opaque dialogue frame, without changing its
+   gentle magnetic motion or any iPhone-specific placement. */
+@media (min-width: 901px) {
+  .about-section { isolation: isolate; }
+  .about-copy.pixel-bubble { position: relative; z-index: 4; }
+  .about-art {
+    position: absolute;
+    z-index: 2;
+    width: clamp(590px, 70%, 1000px);
+    right: clamp(-105px, -5vw, -25px);
+    top: clamp(-55px, -3vw, -18px);
+    pointer-events: none;
+  }
+}
+@media (min-width: 701px) and (max-width: 900px) {
+  .about-copy.pixel-bubble { z-index: 4; }
+  .about-art {
+    width: min(84%, 670px);
+    right: -86px;
+    z-index: 2;
+  }
+}
+
+
+/* V37: larger top flower, still pinned to the edge, with stronger overlap. */
+@media (min-width: 901px) {
+  .about-section { isolation: isolate; }
+  .about-copy.pixel-bubble { position: relative; z-index: 4; }
+  .about-art {
+    position: absolute;
+    z-index: 2;
+    width: clamp(720px, 84%, 1220px);
+    right: clamp(-150px, -7vw, -42px);
+    top: clamp(-70px, -3.6vw, -24px);
+    pointer-events: none;
+  }
+}
+@media (min-width: 701px) and (max-width: 900px) {
+  .about-copy.pixel-bubble { position: relative; z-index: 4; }
+  .about-art {
+    position: absolute;
+    z-index: 2;
+    width: min(95%, 760px);
+    right: -120px;
+    top: -36px;
+    pointer-events: none;
+  }
+}
+
+
+/* V38: preserve the oversized right-edge flower in About, but never let
+   its lower pixels draw over Skills & Technologies or Experience.
+   The negative inset allows the flower to extend outside the right edge
+   and top, while the zero bottom inset stops it at About's boundary. */
+@media (min-width: 701px) {
+  .about-section {
+    position: relative;
+    isolation: isolate;
+    clip-path: inset(-140px -260px 0 -260px);
+  }
+  .about-art { pointer-events: none; }
+}
+
+
+/* V39: allow the top flower to continue beneath the Skills area without
+   drawing on top of the cards. Content stays above the artwork. */
+@media (min-width: 701px) {
+  .about-section {
+    position: relative;
+    isolation: isolate;
+    overflow: visible;
+    clip-path: inset(-140px -260px -260px -260px);
+  }
+
+  .about-copy.pixel-bubble {
+    position: relative;
+    z-index: 5;
+  }
+
+  .about-art {
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .skills-section,
+  .experience-section,
+  .extra-section,
+  .contact,
+  footer {
+    position: relative;
+    z-index: 4;
+  }
+
+  .skills-section h2,
+  .experience-section h2,
+  .extra-section h2,
+  .skills-grid,
+  .timeline,
+  .project-list,
+  .contact > * {
+    position: relative;
+    z-index: 4;
+  }
+}
+
+
+/* V40: extend the visible continuation of the top flower further downward.
+   Keep all content above it, but stop the last part from being clipped. */
+@media (min-width: 701px) {
+  .about-section {
+    overflow: visible;
+    clip-path: inset(-160px -280px -900px -280px);
+  }
+
+  .about-art {
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .skills-section,
+  .experience-section,
+  .extra-section,
+  .contact,
+  footer,
+  .skills-grid,
+  .timeline,
+  .project-list {
+    position: relative;
+    z-index: 4;
+  }
+}
+
+
+/* V41: let the bottom flower reach up behind the right project card.
+   Keep the plant rooted at the bottom-right and all card content on top. */
+@media (min-width: 901px) {
+  .page-bottom-flower {
+    right: 0 !important;
+    bottom: 0 !important;
+    width: clamp(350px, 36vw, 430px) !important;
+    z-index: 0 !important;
+  }
+  #projects, .project-list, .project-list > *, .project-list article {
+    position: relative;
+    z-index: 2;
+  }
+}
+@media (min-width: 701px) and (max-width: 900px) {
+  .page-bottom-flower { width: min(43vw, 330px) !important; }
+}
+
+
+/* V42: pink flower is foreground artwork over the Recipe Cart card.
+   The decoration stays bottom-right and retains its GSAP motion. */
+.page-bottom-flower {
+  z-index: 25 !important;
+  pointer-events: none;
+}
+
+/* V43: smaller foreground pink flower, still bottom-right over Recipe Cart. */
+@media (min-width: 901px) {
+  .page-bottom-flower { width: clamp(255px, 26vw, 320px) !important; }
+}
+@media (min-width: 701px) and (max-width: 900px) {
+  .page-bottom-flower { width: min(34vw, 265px) !important; }
+}
+@media (max-width: 700px) {
+  .page-bottom-flower { width: min(39vw, 170px) !important; }
 }
