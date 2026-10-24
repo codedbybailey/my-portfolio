@@ -133,3 +133,6 @@ Restore pixel text boxes, overlap positioning, and bottom-right flower.
 
 
 V31: Improved Contact/footer pixel text outline to remain legible when pink flower overlaps. No layout changes.
+
+## V33 wide desktop layout
+For viewports 1400px and wider, the page uses an expanded content area and a balanced About/flower composition. Smaller laptop, iPad, and iPhone layouts are unchanged.

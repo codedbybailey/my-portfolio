@@ -1567,3 +1567,25 @@ footer { z-index: 3 !important; padding-right: min(30vw, 320px); }
   .page-bottom-flower { width: min(43vw, 190px) !important; }
   footer { padding-right: min(44vw, 185px); }
 }
+
+/* V33: wide-screen layout. Existing laptop, tablet and phone layouts remain intact. */
+@media (min-width: 1400px) {
+  .content-width { width: min(calc(100% - 112px), 1290px); }
+  .site-header { max-width: 1410px; padding-left: 56px; padding-right: 56px; }
+  .about-section { min-height: 640px; padding-top: 30px; }
+  .about-copy.pixel-bubble {
+    width: min(42%, 530px);
+    max-width: 530px;
+    margin-top: 24px;
+    padding: 34px 36px 38px;
+  }
+  .about-copy.pixel-bubble h1 { font-size: 31px; }
+  .about-copy.pixel-bubble p { font-size: 28px; line-height: 1.04; }
+  .about-art { top: -32px; right: -30px; width: min(55%, 725px); }
+  .skills-section { margin-top: 34px; }
+  .skills-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+  .skill-card { min-width: 0; }
+  .project-list { gap: 26px; }
+  .experience-section { margin-top: 88px; }
+  .contact > p { max-width: 700px; }
+}
